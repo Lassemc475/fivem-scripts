@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SInteriorOrderData>
+  <startFrom value="3478" />
+  <filePathHash value="0" />
+  <proxies>
+    <Item>vw_casino_penthouse</Item>
+    <Item>vw_casino_garage</Item>
+    <Item>vw_casino_carpark</Item>
+    <Item>vw_casino_main</Item>
+    <Item>vw_casino_placement_vw</Item>
+  </proxies>
+</SInteriorOrderData>
