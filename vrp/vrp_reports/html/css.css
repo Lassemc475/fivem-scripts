@@ -1,0 +1,157 @@
+* {
+    font-family: "Calibri";
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+  }
+
+
+#info {
+    display: none;
+    position: absolute;
+    left: 450px;
+    top: 250px;
+    width: 30%;
+    height: 250px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+#history {
+    overflow: auto;
+    display: none;
+    position: absolute;
+    margin: 10%;
+    height: 70%;
+}
+
+#reports {
+    position: absolute;
+    margin: 10%;
+}
+
+.report {
+    animation-name            : pulse;
+    animation-duration        : 0.5s;
+    animation-direction       : alternate;
+
+    position: relative;
+    height: 80px;
+    min-width: 300px;
+    
+    margin-top: 10px;
+    background-color:  rgba(0, 0, 30, 0.40);
+
+    -webkit-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.68);
+    -moz-box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.68);
+    box-shadow: 0px 0px 21px -1px rgba(0,0,0,0.68);
+
+}
+
+.info-player {
+    color: white;
+    position: relative;
+    left: 30px;
+    top: 30px;
+    display: block;
+}
+
+.title {
+    min-width: 300px;
+    height: 25px;
+
+    text-align: center;
+    color: lightskyblue;
+    text-decoration: underline;
+    font-size: 15px;
+    background: rgba(0, 0, 0, 0.60);
+}
+
+.title2 {
+    min-width: 150px;
+    height: 40px;
+
+    text-align: center;
+    color: lightskyblue;
+    text-decoration: underline;
+    font-size: 23px;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.info {
+    margin: 0px;
+    margin-left: 15px;
+    margin-top: 5px;
+    color: whitesmoke;
+    font-size: 12px;
+}
+
+.info-options {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    display: block;
+}
+
+.info-option {
+    font-size: 15px;
+    position: relative;
+    margin-left: 10px;
+    height: 30px;
+    min-width: 50px;
+    max-width: 65px;
+
+    color: lightskyblue;
+
+    background: rgb(15, 15, 15);
+    border: 1px solid rgb(70, 70, 70);
+}
+
+.options {
+    position: absolute;
+    right: 10px;
+    display: block;
+}
+
+.option {
+    font-size: 10px;
+    position: relative;
+    margin-left: 10px;
+    height: 20px;
+    width: 40px;
+    color: lightskyblue;
+
+    background: rgb(15, 15, 15);
+    border: 1px solid rgb(70, 70, 70);
+}
+
+@keyframes pulse {
+    from {
+        opacity   : 0.10;
+    }
+    10% {
+        opacity   : 0.20;
+    }
+    30% {
+        opacity   : 0.30;
+    }
+    40% {
+        opacity   : 0.40;
+    }
+    50% {
+        opacity   : 0.50;
+    }
+    60% {
+        opacity   : 0.60;
+    }
+    70% {
+        opacity   : 0.70;
+    }
+    80% {
+        opacity   : 0.80;
+    }
+    to {
+        opacity   : 1;
+    }
+}
