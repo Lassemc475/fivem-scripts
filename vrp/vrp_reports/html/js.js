@@ -159,7 +159,7 @@ function MoreInfo(reportID) {
             <button type='button' class='info-option' style='color:red;' onclick='DeleteReport(" + report.report + ")'>Slet</button>\
         </div><div class='info-player'>\
         <i class='far fa-clock'></i><i> " + report.time + " (" + data[3] + ")</i></br>\
-        <i class='fas fa-file-signature'></i><i> " + report.name + " (" + report.id + ")</i></br>\
+        <i class='fas fa-file-signature'></i><i> " + report.name + " (" + report.userid + ")</i></br>\
         <i class='fab fa-discord'></i><i> " + report.discord + "</i></br>\
         <i class='far fa-comment-dots'></i><i> " + report.text + "</i></br>\
         <i class='fas fa-road'></i><i> " + data[2] + "</i></br>\

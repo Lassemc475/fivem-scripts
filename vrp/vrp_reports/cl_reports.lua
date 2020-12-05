@@ -3,12 +3,31 @@ vRPclient = Tunnel.getInterface("vRP","vrp_reports")
 
 local NUI = false
 
+function getPlayersInArea(coords,area)
+    local players = GetActivePlayers()
+    local playersInArea = {}
+  
+    for i=1, #players, 1 do
+  
+      local target       = GetPlayerPed(players[i])
+      local targetCoords = GetEntityCoords(target)
+      local distance     = GetDistanceBetweenCoords(targetCoords.x, targetCoords.y, targetCoords.z, coords.x, coords.y, coords.z, true)
+  
+      if distance <= area then
+        table.insert(playersInArea, players[i])
+      end
+  
+    end
+  
+    return playersInArea
+end
+
 TriggerServerEvent("reports:init")
 
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(0)
-        if (IsControlJustPressed(1, 199) and not NUI) then
+        if (IsControlJustPressed(1, 10) and not NUI) then
             TriggerServerEvent("reports:historyS")
             Wait(500)
         end
@@ -59,9 +78,8 @@ RegisterNUICallback('GetInfo', function(data, cb)
     local div = {'fas fa-power-off', 'OFFLINE'}
 
     if DoesEntityExist(ped) and NetworkIsPlayerActive(id) then
-        --local nearbyPlayers = GetPlayersInArea(GetEntityCoords(ped), 20)
-        --div = {'fas fa-users', #nearbyPlayers - 1 .. ' players nearby (20m)'}
-        div = {'fas fa-users', 'Der er spillere tæt på'}
+        local nearbyPlayers = getPlayersInArea(GetEntityCoords(ped), 20)
+        div = {'fas fa-users', #nearbyPlayers - 1 .. ' spillere i nærheden (20m)'}
     end
     
     cb({div,data, GetStreetAndZone(GetEntityCoords(ped)), min > 0 and (min .. " minutter siden") or (sec .. " sekunder siden")})

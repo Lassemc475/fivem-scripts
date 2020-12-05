@@ -18,6 +18,7 @@ end)
 
 RegisterCommand("report", function(source, args, user)
     local source = source
+    local playerid = vRP.getUserId({source})
     local xPlayers = GetPlayers()
 
     if ((wait[source]) and (wait[source]+Config.ReportCooldown > GetGameTimer())) then
@@ -29,7 +30,7 @@ RegisterCommand("report", function(source, args, user)
     end
 
     local report = #reports + 1
-    reports[report] = { report = report, id = source, name = GetPlayerName(source), text = table.concat(args, " "), discord = discord[source] }
+    reports[report] = { report = report, id = source, name = GetPlayerName(source), text = table.concat(args, " "), discord = discord[source], userid = playerid }
 
     for k,v in pairs(xPlayers) do
         local xPlayer = vRP.getUserId({v})
